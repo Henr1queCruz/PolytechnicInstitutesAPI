@@ -18,12 +18,9 @@ namespace PolytechnicInstitutesApi.Controllers
                 {
                     institutes = await result.Content.ReadAsAsync<IEnumerable<PolytechnicInstitutesDto>>();
                 }
-                else //web api sent error response 
+                else
                 {
-                    //log response status here..
-
                     institutes = Enumerable.Empty<PolytechnicInstitutesDto>();
-
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }
